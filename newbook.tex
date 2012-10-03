@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{thumbpdf}
+\usepackage[pdftex,
+        colorlinks=true,
+        urlcolor=rltblue,       % \href{...}{...} external (URL)
+        filecolor=rltgreen,     % \href{...} local file
+        linkcolor=rltred,       % \ref{...} and \pageref{...}
+        pdftitle={Matemática Aplicada con Python},
+        pdfauthor={José J. Reyna},
+        pdfsubject={Just a test},
+        pdfkeywords={programming, python, mathematics},
+        pdfproducer={pdfLaTeX},
+        pdfadjustspacing=1,
+        pagebackref,
+        pdfpagemode=None,
+        bookmarksopen=true]{hyperref}
+\usepackage{color}
+\definecolor{rltred}{rgb}{0.75,0,0}
+\definecolor{rltgreen}{rgb}{0,0.5,0}
+\definecolor{rltblue}{rgb}{0,0,0.75}
+
+\title{Matemática Aplicada con Python}
+\author{José J. Reyna}
+\date{\today}
+
+\begin{document}\label{start}
+
+\maketitle
+
+\newpage
+
+\section{Introducción}\label{introduccion}
+
+\subsection{Misión}\label{mision}
+
+La misión de éste libro es poner a disposición de cualquier persona dos de las principales
+herramientas que hoy en día permiten conocer la realidad, realizar nuevos 
+descubrimientos, construir empresas y tener poder militar. Esas son la matemática
+y la programación. Justificar semejante misión (y convencerte de que es posible) 
+es la tarea que ahora tiene el libro. Las siguientes partes, "breve historia de la
+computación" y "propósito y estructura del libro", espero permitan ver la motivación y hacia donde
+se quiere llegar.
+
+\subsection{Breve historia de la computación}\label{historia}
+
+Hoy en día las computadoras están en todas partes, cumpliendo diferentes
+funciones y con distintas apariencias. En cada oficina podemos estar seguros de
+que hay por lo menos una PC con algún procesador de textos y
+un hoja de cálculo para crear documentos, y en cada escuela un grupo de niños al que
+probablemente les están mintiendo al hacerles creer que usar esos programas es "informática". 
+Pero los computadores no sólo están en los escritorios. Los smartphones e incluso 
+las cónsolas de videojuegos tienen la misma estructura 
+interna (circuitos, chips, procesadores...), y, como podría esperarse, tienen a
+su vez el mismo origen.
+\newline\newline
+Por el año 1812, a Charles Babbage se le ocurrió la idea de sustituir a los
+computistas humanos que creaban tablas de logaritmos (largas hojas llenas de números) 
+por máquinas, probablemente porque le parecían demasiado lentos. Ésta iniciativa, sin embargo, tenía la pequeña limitación de que 
+en aquella época no existían Microsoft, Apple o Linux, y ni siquiera los chips. 
+Lo único que Babagge tenía a su disposición eran engranajes mecánicos. En base a eso
+realizó varios diseños que nunca pudo ver terminados, pero que gracias a ellos hoy
+se le considera el padre de la computación. Interesantemente, a finales del siglo XX 
+la humanidad \href{http://www.economist.com/node/324654?story_id=E1_PNQGVQ}{se percató} de que en ciertas condiciones hostiles, como el espacio exterior y reactores nucleares, diseños similares
+a los de Babbage presentan ventajas frente a la electrónica. Ciertamente debe estar descanzando en paz, a pesar de nunca haber visto uno de sus diseños funcionando. Lo principal de ésta parte del cuento para éste libro, en resumen, es que podemos afirmar que \emph{el primer ser humano que se imaginó una
+computadora quería hacer cálculos matemáticos más rápido}.
+\newline\newline
+Si nos saltamos unos cuantos años y llegamos a la segunda guerra mundial, nos 
+encontramos con que los alemanes usaban 
+\href{https://en.wikipedia.org/wiki/Enigma_machine}{una nieta de Babbage} 
+para encriptar sus mensajes secretos. Y, como era de esperarse, los aliados no 
+estaban del todo contentos con esa situación. Hombres como 
+\href{https://es.wikipedia.org/wikiJohn_von_Neumann}{John von Neumann} 
+y 
+\href{https://es.wikipedia.org/wiki/Alan_Turing}{Alan Turing} 
+fueron clave para poder descifrar los códigos nazis y garantizar la victoria de
+los aliados, por saber los planes de los alemanes y la ubicación de sus barcos, submarinos y suministros. De los trabajos de Turing y Von Neumann en aquella época quedaron los dos modelos 
+que sigue toda la computación moderna, ya sean PC's, servidores o smartphones: La
+\href{https://es.wikipedia.org/wiki/M\%C3\%A1quina_de_Turing}{máquina de Turing}
+y la
+\href{https://es.wikipedia.org/wiki/Arquitectura_de_von_Neumann}{arquitectura de Von Neumann}.
+Dé esta segunda parte podemos afirmar que \emph{la computación y las matemáticas ayudaron a los
+los aliados a derrotar a los nazis}.
+\newline\newline
+Durante esa misma época, alrededor del año 1946 el mismo Von Neumann estuvo en
+\href{https://es.wikipedia.org/wiki/Laboratorio_Nacional_de_Los_\%C3\%81lamos}{Los Alamos} 
+(el centro de investigación que desarrolló la bomba atómica), formando parte del 
+equipo que desarrolló el Método de Montecarlo, considerado como el algoritmo
+\href{http://www.uta.edu/faculty/rcli/TopTen/topten.pdf}{más importante del siglo XX}.
+Éste puede ser utilizado en una gran cantidad de temas, que abarcan desde el análisis financiero y de riesgos, los gráficos computacionales, y la simulación científica, entre muchos otros. No exageramos demasiado al decir que \emph{es una parte importante del desarrollo económico del siglo XX}.
+\newline\newline
+A ésta sección aún le falta redacción, pero espero que incluso en su estado actual
+permita comprender cuál es la misión del libro. La forma en que se quiere llevar a
+cabo sigue a continuación.
+
+\subsection{Propósito y estructura del libro}\label{estructura}
+\newline
+Muchas veces sucede que la gente escribe los libros que les hubiese gustado leer,
+y ésta no es una excepción. El lector ideal es, por lo tanto, un estudiante que
+ha pasado por el sistema educativo olvidando casi todo luego de los exámenes por
+no haberlo puesto en práctica lo aprendido, y que desea tener en sus manos ese mismo poder que permite
+comprender la realidad, descubrir cosas nuevas, construir empresas
+y dirigir ejércitos. Por supuesto los detalles son muchos y bastante complejos,
+pero la esperanza principal del libro, y la que espero que sea posible encender
+y avivar con él, es que todas éstas cosas suelen estar lejos no porque uno no sea
+lo suficientemente afortunado o inteligente, sino porque el sistema educativo está
+atrozmente obsoleto, y no es capaz de ver más allá de los pénsums oficiales para
+distinguir las esperanzas personales de cada estudiante.
+\newline\newline
+El libro está hecho de la siguiente forma: Empezando desde el álgebra, se describirá
+cada concepto necesario de la forma más intuitiva posible, explicando cual es su utilidad
+en problemas reales y su posición dentro de las matemáticas. Luego se resolverán 
+diferentes ejercicios de ejemplo utilizando librerías externas de Python, y al 
+final se explicará un algoritmo 
+que permita resolver los mismos problemas. Éste algoritmo probablemente no será
+tan eficiente como los presentes en las librerías especializadas, pero se hará
+un esfuerzo porque sea lo más legible posible y represente de forma fiel los
+conceptos matemáticos que utiliza. De éste modo se espera
+cubrir incrementalmente las necesidades de tres tipos de lectores distintos: 
+Aquellos que están empezando desde cero, las personas que ya conocen el tema y 
+que sólo deseen aprender cómo resolver problemas (estilo cookbook), y aquellos
+que deseen comprender el mecanismo que permite resolverlo. El libro está hecho
+para que los primeros lean cada capítulo en orden, aprendiendo todo lo necesario
+paso a paso, y para que los otros puedan saltar directamente hacia el tema que
+deseen. En un futuro se 
+espera agregar una cuarta parte con el razonamiento matemático, pero ésto se
+hará cuando ya las tres partes anteriores estén realizadas.
+\newline\newline
+Para terminar, éste libro se encuentra bajo la licencia \href{https://creativecommons.org/licenses/by-nc/3.0/}{Creative Commons BY-NC 3.0}. Puedes redistribuirlo con libertad, crear obras derivadas y citarlo cómo prefieras, siempre y cuando tengas la bondad de mencionarme y que lo hagas sin fines de lucro.
+
+\subsection{Contenido}
+
+El libro inicia describiendo el lenguaje de Programación Python, y proporcionando instrucciones sobre como instalarlo junto con las librerías necesarias en sistemas Windows y Linux. Entre los tópicos a ser tratados se encuentran álgebra (elemental y lineal), cálculo (límites, derivadas, integrales y diferenciales), estadísticas, grafos (redes sociales), métodos numéricos y aprendizaje automático (machine learning).
+
+\subsection{Pre-requisitos}
+
+El único conocimiento necesario para seguir el libro son las cuatro operaciones
+aritméticas elementales (suma, resta, multiplicación y división). Tampoco haría
+daño tener vagos recuerdos sobre cómo despejar ecuaciones elementales. Es 
+conveniente notar aquí que el autor está releyendo sobre varias conceptos de
+secundaria para escribir sobre ellos, y al momento de iniciar el libro (por ahora)
+tampoco conoce las técnicas más avanzadas.
+
+\subsection{Referencias (temporal)}
+
+Qué es programar: \href{http://gr3p.com/2012/10/que-es-programar-iii/}{gr3p blog}\newline
+Aprender Python: \href{http://learnpythonthehardway.org/}{Learn Python the Hard Way}\newline
+Matemática mal enseñada: \href{http://www.maa.org/devlin/lockhartslament.pdf}{Lockhart's Lament}\newline
+Cálculo: \href{http://www.gutenberg.org/ebooks/33283}{Calculus Made Easy}\newline
+Ecuaciones diferenciales: \href{http://mysite.science.uottawa.ca/rsmith43/Zombies.pdf}{Zombie Breakout}\newline
+
+\label{end}\end{document}
